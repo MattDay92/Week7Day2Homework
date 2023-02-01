@@ -84,16 +84,25 @@ p2.printInfo()
 
 const greaterThanTen = (string) => {
     return new Promise( (resolve, reject) => {
-        if (string.length() > 10){
-            resolve(true)
+        if (string.length > 10){
+            resolve('Big word')
         }
         else {
-            reject(false)
+            reject('Small Number')
         }
     })
 }
 
-greaterThanTen('Mississippi')
+response = greaterThanTen('Mississippi')
+console.log(response)
+response2 = greaterThanTen('Bob')
+console.log(response2)
+
+const gettingGreaterThanTen = async ()=>{
+    const res = await greaterThanTen('Mississippi')
+    console.log(res, ' - from using async version')
+}
+gettingGreaterThanTen()
 
 
 
